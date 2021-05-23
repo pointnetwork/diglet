@@ -1,0 +1,51 @@
+{
+  "name": "@pointnetwork/diglet",
+  "version": "2.0.6",
+  "description": "fully encrypted reverse https tunnel",
+  "main": "index.js",
+  "bin": {
+    "diglet": "bin/diglet.js",
+    "diglet-server": "bin/diglet-server.js",
+    "diglet-tunnel": "bin/diglet-tunnel.js"
+  },
+  "scripts": {
+    "test": "mocha --exit",
+    "linter": "eslint index.js lib test",
+    "coverage": "istanbul cover _mocha -- --exit",
+    "release-tunnel": "pkg ./bin/diglet-tunnel.js --out-path dist",
+    "release-server": "pkg ./bin/diglet-server.js --out-path dist",
+    "release": "npm run release-tunnel && npm run release-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pointnetwork/diglet.git"
+  },
+  "keywords": [
+    "tunnel",
+    "https"
+  ],
+  "author": "Emery Rose Hall <emery@deadcanaries.org>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/pointnetwork/diglet/issues"
+  },
+  "homepage": "https://github.com/pointnetwork/diglet#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.16.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "pem": "^1.14.2",
+    "pkg": "^4.3.3",
+    "ws": "^5.2.2"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "bunyan": "^1.8.5",
+    "commander": "^2.9.0",
+    "merge": "^1.2.1",
+    "rc": "^1.1.6",
+    "secp256k1": "=3.2.2",
+    "tldjs": "^1.7.0"
+  }
+}
